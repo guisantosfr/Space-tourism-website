@@ -1,8 +1,9 @@
+/* ----- TAILWIND ----- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ----- RESET -----*/
+/* ----- RESET ----- */
 *,
 *::before,
 *::after {
@@ -50,4 +51,35 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ----- COLOR VALUES ----- */
+:root {
+  --color-dark: 230 35% 7%;
+  --color-light: 231 77% 90%;
+  --color-white: 0 0% 100%;
+}
+
+.bg-dark {
+  background-color: hsl(var(--color-dark));
+}
+
+.bg-accent {
+  background-color: hsl(var(--color-light));
+}
+
+.bg-white {
+  background-color: hsl(var(--color-white));
+}
+
+.text-dark {
+  color: hsl(var(--color-dark));
+}
+
+.text-accent {
+  color: hsl(var(--color-light));
+}
+
+.text-white {
+  color: hsl(var(--color-white));
 }
