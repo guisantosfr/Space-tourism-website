@@ -40,6 +40,9 @@ body {
   background-color: hsl(var(--color-dark));
   line-height: 1.5;
   min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
 }
 
 img,
@@ -180,6 +183,33 @@ select {
   line-height: 1.1;
 }
 
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.grid-container {
+  display: grid;
+}
+
+@media(min-width: 45rem) {
+  .grid-container {
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0px, 30rem)) minmax(2em, 1fr);
+  }
+
+  .grid-container>*:first-child {
+    grid-column: 2;
+  }
+
+  .grid-container>*:last-child {
+    grid-column: 3;
+  }
+
+}
+
+
 .numbered-title {
   font-family: var(--font-sans-cond);
   font-size: var(--font-500);
@@ -194,7 +224,7 @@ select {
 }
 
 .large-button {
-  display: grid;
+  display: inline-grid;
   place-items: center;
   padding: 0 2em;
   aspect-ratio: 1;
@@ -223,10 +253,7 @@ select {
 }
 
 /* ----- Navigation ----- */
-/* ----- nav, ul, li, a ----- */
-/* ----- classses on ul: primary-navigation underline-indicators flex ----- */
-/* ----- classses on li: active ----- */
-/* ----- classses on a: uppercase text-white letter-spacing-2 ----- */
+
 .primary-navigation {
   gap: 1rem;
   --underline-gap: 2rem;
